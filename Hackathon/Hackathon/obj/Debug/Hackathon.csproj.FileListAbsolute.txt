@@ -1,1 +1,8 @@
 D:\hack\hack\Hackathon\Hackathon\bin\Debug\Hackathon.exe.config
+D:\hack\hack\Hackathon\Hackathon\bin\Debug\Hackathon.exe
+D:\hack\hack\Hackathon\Hackathon\bin\Debug\Hackathon.pdb
+D:\hack\hack\Hackathon\Hackathon\bin\Debug\Microsoft.Exchange.WebServices.Auth.dll
+D:\hack\hack\Hackathon\Hackathon\bin\Debug\Microsoft.Exchange.WebServices.Auth.xml
+D:\hack\hack\Hackathon\Hackathon\obj\Debug\Hackathon.csprojResolveAssemblyReference.cache
+D:\hack\hack\Hackathon\Hackathon\obj\Debug\Hackathon.exe
+D:\hack\hack\Hackathon\Hackathon\obj\Debug\Hackathon.pdb
