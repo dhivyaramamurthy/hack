@@ -1,42 +1,45 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using main;
 using Microsoft.Exchange.WebServices.Data;
 
-namespace main
+namespace Hackathon
 {
     class MailManager
     {
-        private ExchangeService _exchangeService;
+        private ExchangeService _service;
 
         public MailManager(string emailAddress)
         {
-            _exchangeService = new ExchangeService(ExchangeVersion.Exchange2010_SP2);
-            _exchangeService.AutodiscoverUrl(emailAddress);
+            _service = new ExchangeService(ExchangeVersion.Exchange2010_SP2);
+            _service.AutodiscoverUrl(emailAddress);
         }
 
-        public void FindChildFolders()
+        public IEnumerable<Mail> ReadMessages(string mailFolder)
         {
-            FindFoldersResults findResults = _exchangeService.FindFolders(
-            WellKnownFolderName.Inbox,
-            new FolderView(int.MaxValue));
+            var folder = FindFolderByName(mailFolder);
 
-            foreach (Folder folder in findResults.Folders)
-            {
-                Logger.WriteInformation(folder.DisplayName);
-                Logger.WriteInformation(folder.Id.ToString());
-            }
+            var items = folder.FindItems(new ItemView(10)).OrderBy(x => x.DateTimeReceived);
+
+            return items
+                .Where(item => item is EmailMessage)
+                .OrderBy(message => message.DateTimeReceived)
+                .Select(message => new Mail(message as EmailMessage))
+                .AsEnumerable();
         }
 
-        public void ListFirstTenItems()
+         public Folder FindFolderByName(string mailFolder)
         {
-            FindItemsResults<Item> findResults = _exchangeService.FindItems(
-            WellKnownFolderName.Inbox,
-            new ItemView(10));
+            Logger.WriteInformation(String.Format("Looking for folder named '{0}'", mailFolder));
 
-            foreach (EmailMessage item in findResults.Items)
-            {
-                item.Load();
-                Logger.WriteInformation(item.Body);
-            }
+            var folderFilter = new SearchFilter.IsEqualTo(FolderSchema.DisplayName, mailFolder);
+            var rootFolder = Folder.Bind(_service, WellKnownFolderName.MsgFolderRoot);
+
+            var searchResults = rootFolder.FindFolders(folderFilter, new FolderView(1));
+
+            var folder = searchResults.First();
+            return folder;
         }
     }
-}
+ }
