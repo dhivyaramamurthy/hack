@@ -19,6 +19,7 @@ namespace Hackathon
                 ItemSchema.Subject,
                 ItemSchema.Body,
                 EmailMessageSchema.ConversationIndex,
+                EmailMessageSchema.ConversationId,
                 EmailMessageSchema.Sender,
                 EmailMessageSchema.From,
                 EmailMessageSchema.ToRecipients,
