@@ -6,3 +6,7 @@ D:\hack\hack\Hackathon\Hackathon\bin\Debug\Microsoft.Exchange.WebServices.Auth.x
 D:\hack\hack\Hackathon\Hackathon\obj\Debug\Hackathon.csprojResolveAssemblyReference.cache
 D:\hack\hack\Hackathon\Hackathon\obj\Debug\Hackathon.exe
 D:\hack\hack\Hackathon\Hackathon\obj\Debug\Hackathon.pdb
+D:\hack\hack\Hackathon\Hackathon\bin\Debug\Newtonsoft.Json.dll
+D:\hack\hack\Hackathon\Hackathon\bin\Debug\System.Net.Http.Formatting.dll
+D:\hack\hack\Hackathon\Hackathon\bin\Debug\Newtonsoft.Json.xml
+D:\hack\hack\Hackathon\Hackathon\bin\Debug\System.Net.Http.Formatting.xml

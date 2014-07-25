@@ -29,15 +29,13 @@ namespace main
 
             if (!File.Exists(path))
             { 
-                File.CreateText(path);
-               
+                File.CreateText(path);   
             }
 
-            // This text is always added, making the file longer over time 
-            // if it is not deleted. 
             using (StreamWriter sw = File.AppendText(path))
             {
                 sw.WriteLine(mail.Message.ConversationId + "\t" + mail.Message.ConversationTopic);
+                Logger.WriteInformation(mail.Message.ConversationTopic);
                 sw.Close();
             }
         }
