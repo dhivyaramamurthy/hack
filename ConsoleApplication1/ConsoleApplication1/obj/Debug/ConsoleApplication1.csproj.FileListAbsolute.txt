@@ -1,0 +1,10 @@
+D:\hack\hack\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+D:\hack\hack\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\hack\hack\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\hack\hack\ConsoleApplication1\ConsoleApplication1\bin\Debug\Newtonsoft.Json.dll
+D:\hack\hack\ConsoleApplication1\ConsoleApplication1\bin\Debug\System.Net.Http.Formatting.dll
+D:\hack\hack\ConsoleApplication1\ConsoleApplication1\bin\Debug\Newtonsoft.Json.xml
+D:\hack\hack\ConsoleApplication1\ConsoleApplication1\bin\Debug\System.Net.Http.Formatting.xml
+D:\hack\hack\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+D:\hack\hack\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+D:\hack\hack\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
