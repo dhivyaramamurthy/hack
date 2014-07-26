@@ -34,8 +34,8 @@ namespace main
 
             using (StreamWriter sw = File.AppendText(path))
             {
-                sw.WriteLine(mail.Message.ConversationId + "\t" + mail.Message.ConversationTopic);
-                Logger.WriteInformation(mail.Message.ConversationTopic);
+                sw.WriteLine(mail.ConversationId + "\t" + mail.ConversationTopic);
+                Logger.WriteInformation(mail.ConversationTopic + mail.ConversationIndex);
                 sw.Close();
             }
         }
