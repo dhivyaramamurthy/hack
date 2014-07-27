@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +17,8 @@ namespace main
         static void Main(string[] args)
         {
 
-            var mailbox = new MailManager("dhgovind@microsoft.com");
-            var messages = mailbox.ReadMessages("hydchat");
+            var mailbox = new MailManager("dhivyar@microsoft.com");
+            var messages = mailbox.ReadMessages("Inbox");
             messages.ToList().ForEach( x => ProcessMail(x));
             Console.ReadKey();
 
@@ -25,13 +26,14 @@ namespace main
 
         private static void ProcessMail(Mail mail)
         {
-            String path = "C:\\temp\\mail.txt";
+            String path = "D:\\Temp\\mail.txt";
 
             if (!File.Exists(path))
             { 
-                File.CreateText(path);   
+                var mailFilePtr=File.CreateText(path);
+                mailFilePtr.Dispose();
             }
-
+ 
             using (StreamWriter sw = File.AppendText(path))
             {
                 sw.WriteLine(mail.ConversationId + "\t" + mail.ConversationTopic);
